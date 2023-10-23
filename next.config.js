@@ -4,7 +4,9 @@ const nextConfig = {
         serverActions: true
     },
     images: {
-        formats: ["image/avif", "image/webp"]
+        formats: ["image/avif", "image/webp"],
+        domains: ["cdn.builder.io"],
+        dangerouslyAllowSVG: true
     }
 };
 
