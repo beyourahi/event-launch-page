@@ -51,8 +51,7 @@ export const frameworks = [
 
 export type Framework = (typeof frameworks)[number];
 
-export const calculateTimeToEvent = () => {
-    const eventDate = new Date("2023-12-31T09:00:00-07:00"); // December 31, 2023, 9 AM PT
+export const calculateTimeToEvent = (eventDate: Date) => {
     const currentDate = new Date();
     const timeRemaining = eventDate.getTime() - currentDate.getTime();
 

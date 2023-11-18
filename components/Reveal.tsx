@@ -1,13 +1,9 @@
 import { cn } from "lib";
 
-interface Props {
-    showBackground: boolean;
-}
-
-export const Reveal = ({ showBackground }: Props) => (
+export const Reveal = ({ showBackground }: { showBackground: boolean }) => (
     <div
         className={cn(
-            "fixed inset-0 bg-black transition-opacity duration-300",
+            "fixed inset-0 bg-black transition-all duration-300",
             showBackground ? "opacity-0" : "opacity-100"
         )}
     />

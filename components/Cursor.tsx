@@ -2,11 +2,11 @@ import { assets } from "lib";
 import Image from "next/image";
 import { useState, useEffect, RefObject } from "react";
 
-interface Props {
+interface Cursor {
     buttonRef: RefObject<HTMLButtonElement>;
 }
 
-export const Cursor = ({ buttonRef }: Props) => {
+export const Cursor = ({ buttonRef }: Cursor) => {
     const [cursorPosition, setCursorPosition] = useState({
         x: -100,
         y: -100

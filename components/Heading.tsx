@@ -1,13 +1,14 @@
 import { assets, cn } from "lib";
 import Image from "next/image";
 import { FrameworkRotation } from "./FrameworkRotation";
+import { CurrentFrameworkProps } from "types";
 
 export const Heading = ({ currentFramework }: CurrentFrameworkProps) => (
     <h1 className="mb-20 max-w-3xl text-center text-5xl leading-snug">
         <Image
             src={assets.figma}
             alt="Figma Logo"
-            className="-mt-2 mr-8 inline-block"
+            className="mr-8 inline-block"
             width={50}
             height={50}
             priority

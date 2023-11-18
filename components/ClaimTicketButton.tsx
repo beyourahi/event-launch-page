@@ -1,5 +1,6 @@
 import { cn } from "lib";
 import { useRef } from "react";
+import { CurrentFrameworkProps } from "types";
 
 export const ClaimTicketButton = ({ currentFramework }: CurrentFrameworkProps) => {
     const buttonRef = useRef<HTMLButtonElement>(null);

@@ -13,6 +13,8 @@ import { CountdownTimer } from "components/CountdownTimer";
 import { Cursor } from "components/Cursor";
 
 const Home = () => {
+    const eventDate = new Date("2023-12-31T09:00:00-07:00"); // December 31, 2023, 9 AM PT
+
     const [currentFramework, setCurrentFramework] = useState<Framework>(frameworks[0]);
     const [showBackground, setShowBackground] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
@@ -20,10 +22,12 @@ const Home = () => {
     useEffect(() => {
         let currentIndex = 0;
 
-        const intervalID = setInterval(() => {
+        const rotateFrameworks = () => {
             setCurrentFramework(frameworks[currentIndex]);
             currentIndex = (currentIndex + 1) % frameworks.length;
-        }, 2000);
+        };
+
+        const intervalID = setInterval(rotateFrameworks, 2000);
 
         return () => clearInterval(intervalID);
     }, []);
@@ -41,7 +45,7 @@ const Home = () => {
                 <Heading currentFramework={currentFramework} />
                 <SubHeading />
                 <ClaimTicketButton currentFramework={currentFramework} />
-                <CountdownTimer currentFramework={currentFramework} />
+                <CountdownTimer currentFramework={currentFramework} eventDate={eventDate} />
             </div>
 
             <Cursor buttonRef={buttonRef} />

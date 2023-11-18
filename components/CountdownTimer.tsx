@@ -1,13 +1,18 @@
 import { calculateTimeToEvent } from "lib";
 import { useState, useEffect } from "react";
 import { TimeUnit } from "./TimeUnit";
+import { CurrentFrameworkProps } from "types";
 
-export const CountdownTimer = ({ currentFramework }: CurrentFrameworkProps) => {
-    const [countdown, setCountdown] = useState(calculateTimeToEvent());
+interface CountdownTimer extends CurrentFrameworkProps {
+    eventDate: Date;
+}
+
+export const CountdownTimer = ({ currentFramework, eventDate }: CountdownTimer) => {
+    const [countdown, setCountdown] = useState(calculateTimeToEvent(eventDate));
     const timeLabels = ["DAYS", "HOURS", "MINUTES", "SECONDS"] as const;
 
     useEffect(() => {
-        const interval = setInterval(() => setCountdown(calculateTimeToEvent()), 1000);
+        const interval = setInterval(() => setCountdown(calculateTimeToEvent(eventDate)), 1000);
         return () => clearInterval(interval);
     }, []);
 

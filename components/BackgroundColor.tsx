@@ -1,8 +1,9 @@
 import { cn } from "lib";
+import { CurrentFrameworkProps } from "types";
 
 export const BackgroundColor = ({ currentFramework }: CurrentFrameworkProps) => (
     <div
-        className={cn("fixed inset-0 opacity-25 transition-colors delay-100 duration-300", {
+        className={cn("fixed inset-0 opacity-25 transition-all delay-100 duration-300", {
             "bg-purple-300": currentFramework === "qwik",
             "bg-sky-300": currentFramework === "safari",
             "bg-yellow-300": currentFramework === "chrome",
