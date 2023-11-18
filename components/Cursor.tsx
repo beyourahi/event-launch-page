@@ -2,18 +2,14 @@ import { assets } from "lib";
 import Image from "next/image";
 import { useState, useEffect, RefObject } from "react";
 
-interface Cursor {
-    buttonRef: RefObject<HTMLButtonElement>;
-}
-
-export const Cursor = ({ buttonRef }: Cursor) => {
+export const Cursor = ({ buttonRef }: { buttonRef: RefObject<HTMLButtonElement> }) => {
     const [cursorPosition, setCursorPosition] = useState({
         x: -100,
         y: -100
     });
 
     useEffect(() => {
-        async function animateCursor() {
+        (async () => {
             if (!buttonRef.current) return;
             // Initial 1-second delay
             await new Promise(resolve => setTimeout(resolve, 1000));
@@ -40,9 +36,8 @@ export const Cursor = ({ buttonRef }: Cursor) => {
 
             // Move the cursor out of the screen
             setCursorPosition({ x: window.innerWidth - 100, y: -100 });
-        }
-
-        animateCursor();
+        })();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

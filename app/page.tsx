@@ -35,7 +35,7 @@ const Home = () => {
     useEffect(() => setShowBackground(true), []);
 
     return (
-        <>
+        <main>
             <BackgroundColor currentFramework={currentFramework} />
             <Gradient />
             <Grid />
@@ -44,12 +44,12 @@ const Home = () => {
             <div className="relative z-10 mx-auto mt-20 flex max-w-7xl flex-col items-center">
                 <Heading currentFramework={currentFramework} />
                 <SubHeading />
-                <ClaimTicketButton currentFramework={currentFramework} />
+                <ClaimTicketButton buttonRef={buttonRef} currentFramework={currentFramework} />
                 <CountdownTimer currentFramework={currentFramework} eventDate={eventDate} />
             </div>
 
             <Cursor buttonRef={buttonRef} />
-        </>
+        </main>
     );
 };
 

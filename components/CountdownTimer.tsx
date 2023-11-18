@@ -14,6 +14,7 @@ export const CountdownTimer = ({ currentFramework, eventDate }: CountdownTimer) 
     useEffect(() => {
         const interval = setInterval(() => setCountdown(calculateTimeToEvent(eventDate)), 1000);
         return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
