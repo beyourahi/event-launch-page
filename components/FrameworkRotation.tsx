@@ -12,8 +12,8 @@ export const FrameworkRotation = ({ currentFramework }: CurrentFrameworkProps) =
                     currentFramework === name
                         ? "transform-none opacity-100"
                         : index > frameworks.indexOf(currentFramework as Framework)
-                        ? "-translate-y-2 opacity-0"
-                        : "translate-y-2 opacity-0"
+                          ? "-translate-y-2 opacity-0"
+                          : "translate-y-2 opacity-0"
                 )}
                 alt="Framework logo"
                 fill
