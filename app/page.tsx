@@ -13,7 +13,7 @@ import { CountdownTimer } from "components/CountdownTimer";
 import { Cursor } from "components/Cursor";
 
 const Home = () => {
-    const eventDate = new Date("2023-12-31T09:00:00-07:00"); // December 31, 2023, 9 AM PT
+    const eventDate = new Date("2024-09-30T18:00:00Z"); // October 1st, 2024 12 AM
 
     const [currentFramework, setCurrentFramework] = useState<Framework>(frameworks[0]);
     const [showBackground, setShowBackground] = useState(false);
